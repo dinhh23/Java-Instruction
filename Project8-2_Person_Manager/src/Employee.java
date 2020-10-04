@@ -6,8 +6,8 @@ public class Employee extends Person {
 		super();
 	}
 
-	public Employee(String ssn) {
-		super();
+	public Employee(String firstName, String lastName, String ssn) {
+		super(firstName, lastName);
 		this.ssn = ssn;
 	}
 

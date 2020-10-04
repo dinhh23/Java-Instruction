@@ -2,17 +2,15 @@
 public class Person {
 	private String firstName;
 	private String lastName;
-	private String ssNumber;
 	
 	public Person() {
 		super();
 	}
 
-	public Person(String firstName, String lastName, String ssNumber) {
+	public Person(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.ssNumber = ssNumber;
 	}
 
 	public String getFirstName() {
@@ -30,11 +28,12 @@ public class Person {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
-	public String displayPerson () {
-		String str = "You entered a new Customer: ";
-		return str;
+
+	@Override
+	public String toString() {
+		return "Name:	"+firstName+ " " + lastName;
 	}
+	
 	
 	
 	

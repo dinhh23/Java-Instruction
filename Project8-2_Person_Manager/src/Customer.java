@@ -9,8 +9,8 @@ public class Customer extends Person {
 	}
 	
 	// fully loaded constructor
-	public Customer(String firstName, String lastName, String ssNumber, String customerNumber) {
-		super(firstName, lastName, ssNumber);
+	public Customer(String firstName, String lastName, String customerNumber) {
+		super(firstName, lastName);
 		this.customerNumber = customerNumber;
 	}
 
@@ -24,7 +24,7 @@ public class Customer extends Person {
 
 	@Override
 	public String toString() {
-		return super.toString()+"\n"+"Customer Number:  :" +customerNumber;
+		return super.toString()+"\n"+"Customer Number:  " +customerNumber;
 	}
 
 	
