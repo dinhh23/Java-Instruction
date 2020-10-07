@@ -1,7 +1,8 @@
-// p. 267
-public class Book extends Product {
-	private String author;
 
+public class Book extends Product implements Printable {
+
+	private String author;
+	
 	public Book() {
 		super();
 	}
@@ -9,6 +10,7 @@ public class Book extends Product {
 	public Book(String code, String description, double price, String author) {
 		super(code, description, price);
 		this.author = author;
+		
 	}
 
 	public String getAuthor() {
@@ -20,10 +22,9 @@ public class Book extends Product {
 	}
 
 	@Override
-	public String toString() {
-		return "Book [author=" + author + ", toString()=" + super.toString() + "]";
+	public void print() {
+		System.out.println(getDescription() + " by " + author);
 	}
-	
 	
 	
 

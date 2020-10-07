@@ -1,3 +1,4 @@
+package ui.console;
 import java.util.Scanner;
 
 public class Console {
@@ -6,14 +7,16 @@ public class Console {
 
     public static String getString(String prompt) {
         System.out.print(prompt);
-        String s = sc.next();  // read user entry until the cursor finds a space character 
+        String s = sc.next();  // read user entry
         sc.nextLine();  // discard any other data entered on the line
         return s;
     }
     
-    public static String getStringSentence(String prompt) {
+    public static String getLine(String prompt) {
         System.out.print(prompt);
-        String s = sc.nextLine();  // read user entry (more than one word) and will move on to the next line
+        String s = sc.nextLine();  // read user entry
+        // don't need to discard data when we want the whole line
+        //sc.nextLine();  // discard any other data entered on the line
         return s;
     }
 
@@ -85,7 +88,35 @@ public class Console {
         return d;
     }
     
+
+    public static String getChoiceString(String prompt, String s1, String s2) {
+        String s = "";
+        boolean isValid = false;
+        while (!isValid) {
+            s = getRequiredString(prompt);
+            if (!s.equalsIgnoreCase(s1) && !s.equalsIgnoreCase(s2)) {
+                System.out.println("Error! Entry must be '" + s1 + "' or '" +
+                        s2 + "'. Try again.");
+            } else {
+                isValid = true;
+            }
+        }
+        return s;
+    }
     
-   
+    public static String getRequiredString(String prompt) {
+        String s = "";
+        boolean isValid = false;
+        while (!isValid) {
+            System.out.print(prompt);
+            s = sc.nextLine();
+            if (s.equals("")) {
+                System.out.println("Error! This entry is required. Try again.");
+            } else {
+                isValid = true;
+            }
+        }
+        return s;
+    }
     
 }

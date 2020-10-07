@@ -1,19 +1,19 @@
 import java.text.NumberFormat;
 
-// p. 263 inheritance
-// JavaBeans.  It is a true POJO (Plain Old Java Object)
-public class Product {
-	// fields / instance variables
+// p. 293 interface 
+
+public class Product implements Printable, Cloneable {
+	// fields / instance variables 
 	private String code;
 	private String description;
 	private double price;
-	
-	//constructor - empty/default constructor
+
+	// constructor - empty/default constructor  
 	public Product() {
 		
 	}
-
-	//constructor - fully loaded constructor
+	
+	// constructor - fully loaded constructor 
 	public Product(String code, String description, double price) {
 		super();
 		this.code = code;
@@ -21,10 +21,12 @@ public class Product {
 		this.price = price;
 	}
 	
+	// getter method 
 	public String getCode() {
 		return code;
 	}
 	
+	// setter method 
 	public void setCode(String inCode) {
 		code = inCode;
 	}
@@ -55,4 +57,15 @@ public class Product {
 		return "Product [code=" + code + ", description=" + description + ", price=" + price + "]";
 	}
 
+	@Override
+	public void print() {
+		System.out.println(description);	
+	}
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+	
+	
 }

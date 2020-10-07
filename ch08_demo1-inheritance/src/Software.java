@@ -7,9 +7,9 @@ public class Software extends Product {
 		super();
 	}
 
-	public Software(String code, String description, double price, String verison) {
+	public Software(String code, String description, double price, String version) {
 		super(code, description, price);
-		this.version = verison;
+		this.version = version;
 	}
 
 	public String getVersion() {
@@ -24,6 +24,20 @@ public class Software extends Product {
 	public String toString() {
 		return "Software [version=" + version + ", toString()=" + super.toString() + "]";
 	}
+
+	// p. 281
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Software) {
+			Software software2 = (Software)obj;
+			if (this.getCode().equalsIgnoreCase(software2.getCode())) {
+				return true;
+			}
+			
+		}
+		return false;
+	}
+	
 	
 	
 	

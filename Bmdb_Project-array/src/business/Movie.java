@@ -1,6 +1,8 @@
+package business;
 
 public class Movie {
 	//instance variables 
+	private int movieID;
 	private String Title;
 	private String Year;
 	private String Rating;
@@ -12,8 +14,9 @@ public class Movie {
 	}
 
 	//fully loaded constructor 
-	public Movie(String title, String year, String rating, String genre) {
+	public Movie(int movieID, String title, String year, String rating, String genre) {
 		super();
+		this.movieID = movieID;
 		this.Title = title;
 		this.Year = year;
 		this.Rating = rating;
@@ -21,6 +24,14 @@ public class Movie {
 	}
 
 	//getter/setter
+	public int getMovieID() {
+		return movieID;
+	}
+
+	public void setMovieID(int movieID) {
+		this.movieID = movieID;
+	}
+
 	public String getTitle() {
 		return Title;
 	}
@@ -56,7 +67,7 @@ public class Movie {
 	public String displayMovieSummary() {
 		String str = "*****Movie Summary*****\n";
 		str += "-----------------------\n";
-		str += Title + " " + Rating + " " + "was released in" + " " + Year+ "."+ " " + "Genre(s):" + " " + Genre;
+		str += movieID + " " + Title + " " + Rating + " " + "was released in" + " " + Year+ "."+ " " + "Genre(s):" + " " + Genre;
 				
 		return str;
 	}

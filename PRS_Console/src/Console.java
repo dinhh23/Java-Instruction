@@ -28,7 +28,9 @@ public class Console {
                 i = sc.nextInt();
                 isValid = true;
             } else {
-                System.err.println("Error! Invalid integer. Try again.");
+            	System.out.println();
+                System.err.println("Invalid Command! Please use a command from the menu!.");
+                System.out.println();
             }
             sc.nextLine();  // discard any other data entered on the line
         }
@@ -118,4 +120,13 @@ public class Console {
         return s;
     }
     
+    public static final String RESET = "\033[0m";  // Text Reset
+    public static final String CYAN = "\033[0;36m";    // CYAN
+    public static final String BLUE_BOLD = "\033[1;34m";   // BLUE
+    public static final String RED_UNDERLINED = "\033[4;31m";    // RED
+    public static final String BLUE_BACKGROUND = "\033[44m";   // BLUE
+    public static final String CYAN_BOLD_BRIGHT = "\033[1;96m";  // CYAN
+    public static final String YELLOW_BACKGROUND_BRIGHT = "\033[0;103m";// YELLOW
+    public static final String BLUE_BACKGROUND_BRIGHT = "\033[0;104m";// BLUE
+    public static final String PURPLE_BOLD_BRIGHT = "\033[1;95m";// PURPLE
 }
