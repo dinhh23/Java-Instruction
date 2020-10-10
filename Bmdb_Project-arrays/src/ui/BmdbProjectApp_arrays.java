@@ -16,11 +16,11 @@ public class BmdbProjectApp_arrays {
 		// initialize an array of actors
 		movies[1] = new Movie(1,"Blank Panther","2018","PG-13","Superhero");
 		movies[2] = new Movie(2,"Star Wars: The Rise of Skywalker","2019","PG-13","Action");
-		movies[3] = new Movie(3,"Robin","Williams","Male","1951-07-21");
+		movies[3] = new Movie(3,"Avengers: Endgame","2019","PG-13","Superhero");
 		
-		actors[1] = new Actor(1,"Chadwick","Boseman","Male","1976-11-29");
-		actors[2] = new Actor(2,"Morgan","Freeman","Male","1937-06-01");
-		actors[3] = new Actor(3,"Robin","Williams","Male","1951-07-21");
+		actors[1] = new Actor(1,"Chadwick","Boseman","M","1976-11-29");
+		actors[2] = new Actor(2,"Morgan","Freeman","M","1937-06-01");
+		actors[3] = new Actor(3,"Robin","Williams","M","1951-07-21");
 	
 		String command = "";
 		while (!command.equalsIgnoreCase("7")) {
@@ -55,6 +55,7 @@ public class BmdbProjectApp_arrays {
 						break;
 						}
 				}
+				
 				System.out.println("Actor Added!!!");
 				System.err.println(actor.displayActorSummary());
 				System.out.println();

@@ -1,12 +1,14 @@
 package business;
 
+import java.time.LocalDate;
+
 public class Actor {
 	// Instance Variables 
 	private int actorID;
 	private String FirstName;
 	private String LastName;
 	private String Gender;
-	private String Birthdate;
+	private LocalDate Birthdate;
 	
 	//Empty Constructor 
 	public Actor() {
@@ -14,13 +16,13 @@ public class Actor {
 		
 	}
 	
-	public Actor(int actorID, String firstName, String lastName, String gender, String birthdate) {
+	public Actor(int actorID, String firstName, String lastName, String gender, LocalDate Birthdate) {
 		super();
 		this.actorID = actorID;
 		this.FirstName = firstName;
 		this.LastName = lastName;
 		this.Gender = gender;
-		this.Birthdate = birthdate;
+		this.Birthdate = Birthdate;
 	}
 
 	//getter/setter
@@ -37,7 +39,7 @@ public class Actor {
 	}
 
 	public void setFirstName(String firstName) {
-		FirstName = firstName;
+		this.FirstName = firstName;
 	}
 
 	public String getLastName() {
@@ -45,7 +47,7 @@ public class Actor {
 	}
 
 	public void setLastName(String lastName) {
-		LastName = lastName;
+		this.LastName = lastName;
 	}
 
 	public String getGender() {
@@ -53,15 +55,15 @@ public class Actor {
 	}
 
 	public void setGender(String gender) {
-		Gender = gender;
+		this.Gender = gender;
 	}
 
-	public String getBirthdate() {
+	public LocalDate getBirthdate(LocalDate birthDate) {
 		return Birthdate;
 	}
 
-	public void setBirthdate(String birthdate) {
-		Birthdate = birthdate;
+	public void setBirthdate(LocalDate birthdate) {
+		this.Birthdate = birthdate;
 	}
 
 	public String displayActorSummary() {
@@ -73,9 +75,9 @@ public class Actor {
 				
 		return str;
 	}
+	
+
+}
 
 	
-	
-	
-	
-}
+
