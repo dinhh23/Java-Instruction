@@ -1,6 +1,13 @@
 package ui;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+
 import business.Actor;
 import business.Movie;
 import ui.console.Console;
@@ -46,10 +53,11 @@ public class BmdbProjectApp_arrayslists {
 				String lastName = Console.getString("Last Name? ");
 				String gender = Console.getString("Gender (M/F)? ");
 				String birthDate = Console.getString("Birthdate (YYYY-MM-DD)? ");
+				
 					
 			// Display Output
 				System.out.println("Actor Added!!!");
-				Actor actor = new Actor(actorID,firstName,lastName,gender, birthDate);
+				Actor actor = new Actor(actorID,firstName,lastName,gender,birthDate);
 				actors.add(actor);
 				System.err.println(actor.displayActorSummary());
 				break;
@@ -136,7 +144,6 @@ public class BmdbProjectApp_arrayslists {
 		
 	}
 
-	
-	
+
 	
 }

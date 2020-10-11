@@ -1,6 +1,8 @@
 package business;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class Actor {
 	// Instance Variables 
@@ -16,13 +18,13 @@ public class Actor {
 		
 	}
 	
-	public Actor(int actorID, String firstName, String lastName, String gender, LocalDate Birthdate) {
+	public Actor(int actorID, String firstName, String lastName, String gender, String Birthdate) {
 		super();
 		this.actorID = actorID;
 		this.FirstName = firstName;
 		this.LastName = lastName;
 		this.Gender = gender;
-		this.Birthdate = Birthdate;
+		this.Birthdate = dateConverter(Birthdate);
 	}
 
 	//getter/setter
@@ -76,6 +78,12 @@ public class Actor {
 		return str;
 	}
 	
+	private static LocalDate dateConverter(String birthDate) {
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MMM-dd");
+		dtf = dtf.withLocale(Locale.US);
+		LocalDate date = LocalDate.parse(birthDate, dtf);
+		return date;
+	}
 
 }
 
