@@ -10,7 +10,11 @@ public class FileProcessingApp {
 		String dirString = "c:/temp/sub1/sub2";
 		Path dirPath = Paths.get(dirString);
 		if (Files.notExists(dirPath)) {
-			Files.createDirectories(dirPath);
+			try {
+					Files.createDirectories(dirPath);
+			} catch (IOException e) {
+					e.printStackTrace();
+			}
 			System.out.println("directory created: "+dirPath.getFileName());
 		}
 		
@@ -18,7 +22,11 @@ public class FileProcessingApp {
 		String fileString = "products.txt";
 		Path filePath = Paths.get(dirString, fileString);      // path vari and 
 		if (Files.notExists(filePath)) {
-			Files.createFile(filePath);
+			try {
+				Files.createFile(filePath);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		// display file info
@@ -29,35 +37,53 @@ public class FileProcessingApp {
 		if (Files.exists(dirPath) && Files.isDirectory(dirPath)) {
 			System.out.println("Directory: "+dirPath.toAbsolutePath());
 			System.out.println("Files: ");
-			DirectoryStream<Path> dirStream = Files.newDirectoryStream(dirPath);
-			for (Path p: dirStream) {
-				if (Files.isRegularFile(p)) {
+			DirectoryStream<Path> dirStream;
+			try { 
+				dirStream = Files.newDirectoryStream(dirPath);
+				for (Path p: dirStream) {
+					if (Files.isRegularFile(p)) {
 					System.out.println("    "+p.getFileName());
-				}
-		
+				}		
 			}
+		
+			} catch (IOException e) {
+				e.printStackTrace();
+			}		
 		}
+		
 		
 		// write date to a file 
 		// relative path - will create file inside our project folder 
 		Path productsPath = Paths.get("products.txt");
 		File productsFile = productsPath.toFile();
 		
-		PrintWriter out = new PrintWriter(
-						  new BufferedWriter(
-						  new FileWriter(productsFile)));
+		PrintWriter out;
+		try { 
+			out = new PrintWriter(
+			 new BufferedWriter(
+					 new FileWriter(productsFile)));
 		
 		// write data to the stream
 		out.println("java\tMurach's Java Programming\t57.50");
 		
 		out.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		// read date from file 
-		BufferedReader in = new BufferedReader(
-					        new FileReader(productsFile));
+		BufferedReader in;
+		try { 
+				in = new BufferedReader(
+					        new FileReader(productsFile));				
 		String line = in.readLine();
 		System.out.println(line);
 		in.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		
 		

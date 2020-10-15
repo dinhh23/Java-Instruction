@@ -1,7 +1,4 @@
-import java.time.LocalDate;
-
-import business.Actor;
-import ui.console.Console;
+package business;
 
 public class User {
 	private int ID;
@@ -108,26 +105,9 @@ public class User {
 	public String toString() {
 		return "User [ID=" + ID + ", userName=" + userName + ", passWord=" + passWord + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", phoneNumber=" + phoneNumber + ", email=" + email + ", reviewer="
-				+ reviewer + ", admin=" + admin + ", toString()=" + super.toString() + "]";
+				+ reviewer + ", admin=" + admin + "]";
 	}
 	
 	
 	
 }
-
-//Add Actor
-System.out.println("Add an Actor/Actress: ");
-String firstName = Console.getString("First Name? ");
-String lastName = Console.getString("Last Name? ");
-String gender = Console.getString("Gender (M/F)? ");
-String birthDateStr = Console.getString("Birthdate (YYYY-MM-DD)? ");
-LocalDate birthDate = LocalDate.parse(birthDateStr);
-					
-// Display Output
-System.out.println();
-Actor actor = new Actor(firstName,lastName,gender,birthDate);
-actorDAO.add(actor);
-System.out.println("Actor Added!!!");
-System.err.println(actor.displayActorSummary());
-System.out.println();
-break;

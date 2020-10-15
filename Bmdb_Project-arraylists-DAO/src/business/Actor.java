@@ -16,13 +16,13 @@ public class Actor {
 		
 	}
 	
-	public Actor(int actorID, String firstName, String lastName, String gender, LocalDate BirthDate) {
+	public Actor(int actorID, String firstName, String lastName, String gender, LocalDate birthDate) {
 		super();
 		this.actorID = actorID;
 		this.FirstName = firstName;
 		this.LastName = lastName;
 		this.Gender = gender;
-		this.BirthDate = BirthDate;
+		this.BirthDate = birthDate;
 	}
 
 	//getter/setter
@@ -62,8 +62,8 @@ public class Actor {
 		return BirthDate;
 	}
 
-	public void setBirthDate(LocalDate BirthDate) {
-		this.BirthDate = BirthDate;
+	public void setBirthdate(LocalDate birthDate) {
+		this.BirthDate = birthDate;
 	}
 
 	public String displayActorSummary() {
@@ -75,6 +75,7 @@ public class Actor {
 				
 		return str;
 	}
+	
 	
 
 }

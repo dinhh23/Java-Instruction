@@ -1,0 +1,4 @@
+1	Adam	Sandler	M	1966-09-09
+2	Tom	Hanks	M	1956-07-09
+3	Sarah	Paulson	F	1974-12-17
+6	Hung	Dinh	m	1993-04-10

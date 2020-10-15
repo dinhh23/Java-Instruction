@@ -53,7 +53,7 @@ public class ProductManagerApp {
 				// delete a product
 				System.out.println("Delete A Product: ");
 				String code1 = Console.getString("Enter product code to delete: ");
-				Product p1 = productDAO.get(code);
+				Product p1 = productDAO.get(code1);
 				if (productDAO.delete(p1)) {
 					System.out.println("Product deleted successfully!");
 				}
