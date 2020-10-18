@@ -31,7 +31,7 @@ public class PRS_ConsoleAPP {
 				String lastname = Console.getString("LastName? ");
 				String phonenumber = Console.getString("PhoneNumber? ");
 				String email = Console.getString("Email? ");
-				String reviewer = Console.getChoiceString("Reviewer? ", "T","F");
+				Boolean reviewer = Console.getChoiceString("Reviewer? ", "T","F");
 				String admin = Console.getChoiceString("Admin? ", "T", "F");
 				System.out.println();
 				

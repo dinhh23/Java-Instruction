@@ -10,7 +10,7 @@ import business.Actor;
 public class ActorDB implements DAO<Actor> {
 	
 	private Connection getConnection() throws SQLException {
-		String dbURL = "jdbc:mysql://localhost:3306/bmdb?useSSL=false";
+		String dbURL = "jdbc:mysql://localhost:3306/bmdb?SSL=false";
 		String username = "bmdb_user";
 		String password = "sesame";
 		

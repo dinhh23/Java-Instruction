@@ -1,4 +1,4 @@
-
+l
 public class TernaryOperatorApp {
 
 	public static void main(String[] args) {

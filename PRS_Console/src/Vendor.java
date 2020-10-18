@@ -104,7 +104,7 @@ public class Vendor {
 	public String toString() {
 		return "Vendor [ID=" + ID + ", Code=" + Code + ", Name=" + Name + ", Address=" + Address + ", City=" + City
 				+ ", State=" + State + ", Zip=" + Zip + ", PhoneNumber=" + PhoneNumber + ", Email=" + Email
-				+ ", toString()=" + super.toString() + "]";
+				 + "]";
 	}
 	
 	

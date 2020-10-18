@@ -1,7 +1,4 @@
-import java.time.LocalDate;
 
-import business.Actor;
-import ui.console.Console;
 
 public class User {
 	private int ID;
@@ -11,25 +8,25 @@ public class User {
 	private String lastName;
 	private String phoneNumber;
 	private String email;
-	private String reviewer;   
-	private String admin;
+	private boolean isReviewer;   
+	private boolean isAdmin;
 	
 	public User() {
 		super();
 	}
 
 	public User(int iD, String userName, String passWord, String firstName, String lastName, String phoneNumber,
-			String email, String reviewer, String admin) {
+			String email, boolean isReviewer, boolean isAdmin) {
 		super();
-		ID = iD;
+		this.ID = iD;
 		this.userName = userName;
 		this.passWord = passWord;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
-		this.reviewer = reviewer;
-		this.admin = admin;
+		this.isReviewer = isReviewer;
+		this.isAdmin = isAdmin;
 	}
 
 	public int getID() {
@@ -88,46 +85,31 @@ public class User {
 		this.email = email;
 	}
 
-	public String getReviewer() {
-		return reviewer;
+	public boolean getReviewer() {
+		return isReviewer;
 	}
 
-	public void setReviewer(String reviewer) {
-		this.reviewer = reviewer;
+	public void setReviewer(Boolean isReviewer) {
+		this.isReviewer = isReviewer;
 	}
 
-	public String getAdmin() {
-		return admin;
+	public boolean getAdmin() {
+		return isAdmin;
 	}
 
-	public void setAdmin(String admin) {
-		this.admin = admin;
+	public void setAdmin(Boolean isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 
 	@Override
 	public String toString() {
 		return "User [ID=" + ID + ", userName=" + userName + ", passWord=" + passWord + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", phoneNumber=" + phoneNumber + ", email=" + email + ", reviewer="
-				+ reviewer + ", admin=" + admin + ", toString()=" + super.toString() + "]";
+				+ isReviewer + ", admin=" + isAdmin  + "]";
 	}
 	
 	
 	
 }
 
-//Add Actor
-System.out.println("Add an Actor/Actress: ");
-String firstName = Console.getString("First Name? ");
-String lastName = Console.getString("Last Name? ");
-String gender = Console.getString("Gender (M/F)? ");
-String birthDateStr = Console.getString("Birthdate (YYYY-MM-DD)? ");
-LocalDate birthDate = LocalDate.parse(birthDateStr);
-					
-// Display Output
-System.out.println();
-Actor actor = new Actor(firstName,lastName,gender,birthDate);
-actorDAO.add(actor);
-System.out.println("Actor Added!!!");
-System.err.println(actor.displayActorSummary());
-System.out.println();
-break;
+

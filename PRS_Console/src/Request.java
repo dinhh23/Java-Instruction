@@ -1,9 +1,10 @@
+import java.time.LocalDate;
 
 public class Request {
 	private int ID;
 	private String Description;
 	private String Justification;
-	private String DateNeeded;
+	private LocalDate DateNeeded;
 	private String DeliveryMode;
 	private String Status;
 	private Double Total;
@@ -14,7 +15,7 @@ public class Request {
 		super();
 	}
 
-	public Request(int iD, String description, String justification, String dateNeeded, String deliveryMode,
+	public Request(int iD, String description, String justification, LocalDate dateNeeded, String deliveryMode,
 			String status, Double total, String submittedDate, String reasonForRejection) {
 		super();
 		this.ID = iD;
@@ -52,11 +53,11 @@ public class Request {
 		this.Justification = justification;
 	}
 
-	public String getDateNeeded() {
+	public LocalDate getDateNeeded() {
 		return DateNeeded;
 	}
 
-	public void setDateNeeded(String dateNeeded) {
+	public void setDateNeeded(LocalDate dateNeeded) {
 		this.DateNeeded = dateNeeded;
 	}
 
